@@ -11,37 +11,48 @@ function nombreDuplicado(nombre) {
 function actualizarListasProcesos() {
     const listaEjecucion = document.getElementById('lista-ejecucion');
     const listaEspera = document.getElementById('lista-espera');
-    listaEjecucion.innerHTML = '';
-    listaEspera.innerHTML = '';
+
+    // Mantener los encabezados y eliminar solo las filas de datos
+    listaEjecucion.querySelectorAll('tbody').forEach(tbody => tbody.remove());
+    listaEspera.querySelectorAll('tbody').forEach(tbody => tbody.remove());
 
     let procesosActivos = 0;
     let procesosEspera = 0;
 
+    // Crear cuerpos de tabla (tbody)
+    const tbodyEjecucion = document.createElement('tbody');
+    const tbodyEspera = document.createElement('tbody');
+
     procesos.forEach(proceso => {
-        const tr = document.createElement('tr');
+        const fila = document.createElement('tr');
+        const nombreTd = document.createElement('td');
+        const tamanoTd = document.createElement('td');
 
-        const tdNombre = document.createElement('td');
-        tdNombre.textContent = proceso.nombre;
-        tr.appendChild(tdNombre);
+        nombreTd.textContent = proceso.nombre;
+        tamanoTd.textContent = `${proceso.tamano} páginas`;
 
-        const tdTamano = document.createElement('td');
-        tdTamano.textContent = proceso.tamano;
-        tr.appendChild(tdTamano);
+        fila.appendChild(nombreTd);
+        fila.appendChild(tamanoTd);
 
         if (proceso.estado === 'En ejecución') {
-            listaEjecucion.appendChild(tr);
+            tbodyEjecucion.appendChild(fila);
             procesosActivos++;
         } else {
-            listaEspera.appendChild(tr);
+            tbodyEspera.appendChild(fila);
             procesosEspera++;
         }
     });
+
+    // Agregar los cuerpos de tabla (tbody) generados a las tablas
+    listaEjecucion.appendChild(tbodyEjecucion);
+    listaEspera.appendChild(tbodyEspera);
 
     // Actualizar los contadores
     document.getElementById('contador-activos').textContent = procesosActivos;
     document.getElementById('contador-espera').textContent = procesosEspera;
     document.getElementById('contador-totales').textContent = procesos.length;
 }
+
 
 // Función para actualizar los fragmentos de memoria
 function actualizarMemoria() {
