@@ -77,13 +77,13 @@ button:hover {
 
 /* Página libre (verde) */
 .pagina-libre {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4CAF50 !important; /* Verde */
     color: white;
 }
 
 /* Página ocupada (rojo) */
 .pagina-ocupada {
-    background-color: #F44336; /* Rojo */
+    background-color: #F44336 !important; /* Rojo */
     color: white;
 }
 
