@@ -1,22 +1,22 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #dfdfdf;
+    background-color: #f4f4f4;
 }
 
 #simulador {
     margin: 20px auto;
     max-width: 800px;
-    padding: 40px;
-    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #0c3869;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(12, 56, 105, 0.6);
+    color: #fff;
 }
 
-h1 {
-    color: #0c3869;
-}
-
-h2 {
+h1, h2 {
     color: #0c3869;
 }
 
@@ -29,6 +29,7 @@ label {
     display: inline-block;
     text-align: left;
     width: 200px;
+    color: #000000;
 }
 
 input {
@@ -38,6 +39,7 @@ input {
     max-width: 300px;
     border: 1px solid #0c3869;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 button {
@@ -48,6 +50,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(12, 56, 105, 0.6);
 }
 
 button:hover {
@@ -60,8 +63,9 @@ button:hover {
 
 #fragmentos {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* Inicialmente 7 columnas */
     gap: 10px;
+    justify-content: center;
 }
 
 #fragmentos div {
@@ -77,13 +81,13 @@ button:hover {
 
 /* Página libre (verde) */
 .pagina-libre {
-    background-color: #4CAF50 !important; /* Verde */
+    background-color: #4CAF50 !important;
     color: white;
 }
 
 /* Página ocupada (rojo) */
 .pagina-ocupada {
-    background-color: #F44336 !important; /* Rojo */
+    background-color: #F44336 !important;
     color: white;
 }
 
@@ -105,7 +109,19 @@ th {
     color: white;
 }
 
-/* Asegurarse de que las tablas se alineen correctamente */
 table td, table th {
     vertical-align: middle;
+}
+
+/* Media queries para hacer el grid responsivo */
+@media (max-width: 768px) {
+    #fragmentos {
+        grid-template-columns: repeat(4, 1fr); /* Cambiar a 4 columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    #fragmentos {
+        grid-template-columns: repeat(2, 1fr); /* Cambiar a 2 columnas en pantallas muy pequeñas */
+    }
 }
