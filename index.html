@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Paginación de Memoria</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<h1>Simulador de Paginación de Memoria</h1>
+<div id="simulador">
+  <div id="inputs">
+    <h2>Agregar Proceso</h2>
+    <label for="nombre-proceso">Nombre del Proceso:</label>
+    <input type="text" id="nombre-proceso" placeholder="Nombre único" required>
+    <br>
+    <label for="tamano-proceso">Tamaño del Proceso (Páginas):</label>
+    <input type="number" id="tamano-proceso" placeholder="1-7" required>
+    <br>
+    <button id="agregar">Agregar Proceso</button>
+  </div>
+
+  <div id="terminar-proceso">
+    <h2>Terminar Proceso</h2>
+    <label for="nombre-terminar">Nombre del Proceso:</label>
+    <input type="text" id="nombre-terminar" placeholder="Nombre del proceso" required>
+    <br>
+    <button id="terminar">Terminar Proceso</button>
+  </div>
+
+  <div id="procesos-activos">
+    <h2>Procesos en Ejecución</h2>
+    <p>Procesos Activos: <span id="contador-activos">0</span></p>
+    <table id="lista-ejecucion">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tamaño</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Procesos en ejecución aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="procesos-espera">
+    <h2>Procesos en Espera</h2>
+    <p>Procesos en Espera: <span id="contador-espera">0</span></p>
+    <table id="lista-espera">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tamaño</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Procesos en espera aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <p>Procesos Totales: <span id="contador-totales">0</span></p>
+
+  <div id="memoria">
+    <h2>Memoria (7 Fragmentos)</h2>
+    <div id="fragmentos">
+      <!-- Los fragmentos de memoria se mostrarán aquí -->
+    </div>
+  </div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>

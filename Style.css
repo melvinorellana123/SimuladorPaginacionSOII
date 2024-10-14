@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #dfdfdf;
+}
+
+#simulador {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #0c3869;
+}
+
+h2 {
+    color: #0c3869;
+}
+
+#inputs, #terminar-proceso {
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 5px;
+    display: inline-block;
+    text-align: left;
+    width: 200px;
+}
+
+input {
+    margin: 5px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #0c3869;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #0c3869;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #06405f;
+}
+
+#memoria {
+    margin-top: 20px;
+}
+
+#fragmentos {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+#fragmentos div {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #d3d3d3;
+}
+
+/* Página libre (verde) */
+.pagina-libre {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+/* Página ocupada (rojo) */
+.pagina-ocupada {
+    background-color: #F44336; /* Rojo */
+    color: white;
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #0c3869;
+    color: white;
+}
+
+/* Asegurarse de que las tablas se alineen correctamente */
+table td, table th {
+    vertical-align: middle;
+}
